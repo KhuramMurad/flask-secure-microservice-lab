@@ -1,4 +1,4 @@
-```markdown
+````markdown
 # 🔐 Flask Secure Microservice Lab
 
 A production-ready, containerized **Flask microservice** with a **PostgreSQL** backend, built using **Podman** and secured with **best practices** in secrets management, image scanning, and image signing.
@@ -18,21 +18,19 @@ A production-ready, containerized **Flask microservice** with a **PostgreSQL** b
 
 ---
 
-## 📁 Project Structure
+## 📁 **Project Structure**
 
-```
 <pre>
 flask-secure-microservice-lab/
-├── app.py                  # Flask application
-├── requirements.txt        # Python dependencies
-├── Containerfile           # Flask container definition
-├── db-init/
-│   └── init.sql            # DB table creation script
-├── podman-compose.yml      # Multi-container configuration
-├── .gitignore              # Ignored files (secrets, venv, etc.)
-└── README.md               # You’re reading it!
+├── app.py                 # Flask application
+├── requirements.txt       # Python dependencies
+├── Containerfile          # Flask container definition
+├── db-init/               
+│   └── init.sql           # DB table creation script
+├── podman-compose.yml     # Multi-container configuration
+├── .gitignore             # Ignored files (secrets, venv, etc.)
+└── README.md              # You’re reading it!
 </pre>
-````
 
 ---
 
@@ -48,20 +46,20 @@ pip install -r requirements.txt
 
 ### 2. 🐳 Build the Flask Image
 
-```bash
+```
 podman build -t flask-app -f Containerfile .
 ```
 
 ### 3. 🔐 Create Secret for DB Password
 
-```bash
+```
 echo "mysecretpassword" > db_password.txt
 podman secret create db_password db_password.txt
 ```
 
 ### 4. 🚀 Deploy the Stack
 
-```bash
+```
 podman-compose up -d
 ```
 
@@ -71,7 +69,7 @@ podman-compose up -d
 
 ### Test the API:
 
-```bash
+```
 curl http://localhost:5000
 # {"status": "OK", "message": "Flask Microservice Running"}
 
@@ -85,14 +83,14 @@ curl http://localhost:5000/data
 
 ### 🔎 Image Vulnerability Scan
 
-```bash
+```
 trivy image flask-app
 trivy image postgres:13
 ```
 
 ### ✍️ Sign and Push Image with Cosign
 
-```bash
+```
 export COSIGN_PASSWORD=""
 cosign sign --key cosign.key localhost/flask-app:latest
 cosign verify --key cosign.pub localhost/flask-app:latest
@@ -103,7 +101,7 @@ podman push localhost/flask-app:latest
 
 ## 🧹 Cleanup
 
-```bash
+```
 podman-compose down
 podman secret rm db_password
 podman rmi flask-app
@@ -121,6 +119,27 @@ podman rmi flask-app
 
 ---
 
+## 🧹 How to Remove the Virtual Environment
+
+If you want to remove the `venv/` directory (Python virtual environment) from your project:
+
+```
+deactivate  # If you're currently in the virtual environment
+rm -rf venv
+```
+
+### 🔁 To Recreate Later:
+
+```
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+✅ Make sure `venv/` is listed in your `.gitignore` to avoid committing it.
+
+---
+
 ## 📜 License
 
 Licensed under the [MIT License](LICENSE).
@@ -132,14 +151,9 @@ Licensed under the [MIT License](LICENSE).
 **Khuram Murad**
 🔗 [github.com/KhuramMurad](https://github.com/KhuramMurad)
 
----
-
 ⭐️ *If you found this useful, please consider giving the repo a star!*
 
 ```
-
----
-
-Would you like me to save this into your project as the final `README.md` and prepare the folder for direct GitHub push?
+Let me know when you’re ready for help creating a GitHub release or showcasing this as a portfolio project!
 ```
 
