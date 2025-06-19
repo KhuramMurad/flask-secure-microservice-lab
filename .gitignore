@@ -1,0 +1,17 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Secrets
+db_password.txt
+*.key
+*.pub
+
+# Containers
+*.tar
+
+# System
+.DS_Store
+*.log
+

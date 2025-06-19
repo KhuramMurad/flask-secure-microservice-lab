@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  web:
+    image: flask-app
+    build: .
+    container_name: flask-web
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=db
+      - DB_NAME=mydb
+      - DB_USER=postgres
+      - DB_PASS_FILE=/run/secrets/db_password
+    secrets:
+      - db_password
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  db:
+    image: docker.io/library/postgres:13
+    container_name: postgres-db
+    volumes:
+      - pgdata:/var/lib/postgresql/data:Z
+      - ./db-init:/docker-entrypoint-initdb.d:Z
+    environment:
+      - POSTGRES_PASSWORD_FILE=/run/secrets/db_password
+      - POSTGRES_DB=mydb
+    secrets:
+      - db_password
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+volumes:
+  pgdata:
+
+secrets:
+  db_password:
+    file: db_password.txt
+
+networks:
+  app-network:
+    driver: bridge
