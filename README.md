@@ -1,8 +1,8 @@
 ````markdown
 # 🔐 Flask Secure Microservice Lab
 
-A production-ready, containerized **Flask microservice** with a **PostgreSQL** backend, built using 
-**Podman** and secured with **best practices** in secrets management, image scanning, and image signing.
+A production-ready, containerized Flask microservice with a PostgreSQL backend, built using 
+Podman and secured with best practices in secrets management, image scanning, and image signing.
 
 > ✅ Perfect for learning modern DevOps and security practices with microservices!
 
@@ -151,7 +151,5 @@ Licensed under the [MIT License](LICENSE).
 
 ⭐️ *If you found this useful, please consider giving the repo a star!*
 
-```
 Let me know when you’re ready for help creating a GitHub release or showcasing this as a portfolio project!
-```
 
