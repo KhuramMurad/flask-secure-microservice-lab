@@ -1,7 +1,3 @@
-Here's a **stunning, professionally styled `README.md`** for your GitHub project `flask-secure-microservice-lab`. It includes clear sections, emoji-enhanced visuals, and professional formatting:
-
----
-
 ```markdown
 # 🔐 Flask Secure Microservice Lab
 
