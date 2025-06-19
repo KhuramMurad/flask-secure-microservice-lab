@@ -21,7 +21,7 @@ A production-ready, containerized **Flask microservice** with a **PostgreSQL** b
 ## 📁 Project Structure
 
 ```
-
+<pre>
 flask-secure-microservice-lab/
 ├── app.py                  # Flask application
 ├── requirements.txt        # Python dependencies
@@ -31,7 +31,7 @@ flask-secure-microservice-lab/
 ├── podman-compose.yml      # Multi-container configuration
 ├── .gitignore              # Ignored files (secrets, venv, etc.)
 └── README.md               # You’re reading it!
-
+</pre>
 ````
 
 ---
