@@ -1,13 +1,12 @@
 ````markdown
 # 🔐 Flask Secure Microservice Lab
 
-A production-ready, containerized **Flask microservice** with a **PostgreSQL** backend, built using **Podman** and secured with **best practices** in secrets management, image scanning, and image signing.
+A production-ready, containerized **Flask microservice** with a **PostgreSQL** backend, built using 
+**Podman** and secured with **best practices** in secrets management, image scanning, and image signing.
 
 > ✅ Perfect for learning modern DevOps and security practices with microservices!
 
----
-
-## 🚀 Features
+ 🚀 Features
 
 - 🐍 **Flask REST API** — Lightweight and efficient
 - 🐘 **PostgreSQL** integration — Persistent and initialized via SQL script
@@ -16,7 +15,7 @@ A production-ready, containerized **Flask microservice** with a **PostgreSQL** b
 - 🔎 **Vulnerability Scanning** — Trivy-based image audits
 - ✍️ **Image Signing** — Cosign used to verify image authenticity
 
----
+````
 
 ## 📁 **Project Structure**
 
@@ -32,13 +31,12 @@ flask-secure-microservice-lab/
 └── README.md              # You’re reading it!
 </pre>
 
----
 
 ## 🛠️ Setup Instructions
 
 ### 1. 📦 Create Python Virtual Environment
 
-```bash
+```
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -110,13 +108,13 @@ podman rmi flask-app
 ---
 
 ## 🧠 Learning Outcomes
-
+<pre>
 ✔️ Secure container orchestration
 ✔️ PostgreSQL initialization and persistence
 ✔️ Secrets management with Podman
 ✔️ Best practices in scanning & image signing
 ✔️ Resilience testing and recovery workflows
-
+</pre>
 ---
 
 ## 🧹 How to Remove the Virtual Environment
